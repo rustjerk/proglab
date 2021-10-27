@@ -1,7 +1,9 @@
 package me.rustjerk.itmo.lab3.flight;
 
+import me.rustjerk.itmo.lab3.TimeOfDay;
 import me.rustjerk.itmo.lab3.goal.Goal;
 import me.rustjerk.itmo.lab3.item.Item;
+import me.rustjerk.itmo.lab3.location.Location;
 import me.rustjerk.itmo.lab3.person.Person;
 import me.rustjerk.itmo.lab3.person.trait.Trait;
 import me.rustjerk.itmo.lab3.person.trait.Traits;
@@ -16,6 +18,8 @@ import java.util.Objects;
 
 public class FlightPlan implements HasDescription {
     private FlightKind kind;
+    private TimeOfDay time;
+    private Location location;
     private Duration duration;
     private List<Person> crew;
     private List<Item> cargo;
@@ -26,6 +30,14 @@ public class FlightPlan implements HasDescription {
 
     public FlightKind getKind() {
         return kind;
+    }
+
+    public TimeOfDay getTime() {
+        return time;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public Duration getDuration() {
@@ -50,6 +62,9 @@ public class FlightPlan implements HasDescription {
 
         sb.append(" - Тип: ").append(kind).append("\n");
         sb.append(" - Продолжительность: ").append(DurationUtils.format(duration)).append("\n");
+        sb.append(" - Время суток: ").append(time).append("\n");
+        sb.append(" - Локация: ").append(location.getName()).append("\n");
+        sb.append("    - ").append(location.getDescription()).append("\n");
 
         sb.append(" - Экипаж: \n");
         for (Person person : crew) {
@@ -121,6 +136,16 @@ public class FlightPlan implements HasDescription {
 
         public Builder setDuration(Duration duration) {
             plan.duration = duration;
+            return this;
+        }
+
+        public Builder setTime(TimeOfDay time) {
+            plan.time = time;
+            return this;
+        }
+
+        public Builder setLocation(Location location) {
+            plan.location = location;
             return this;
         }
 
