@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <kind>SCOUTING</kind>
+    <duration>PT2H</duration>
+    <location>GIANT_MOUNTAINS</location>
+    <time>MIDNIGHT</time>
+    <crew>
+        <person>Sherman</person>
+        <person>Pabodie</person>
+        <person>McTighe</person>
+    </crew>
+    <cargo>
+        <item>AERIAL_CAMERA</item>
+        <item>RADIO</item>
+        <item>GEOLOGIST_EQUIPMENT</item>
+        <item>KARLSSON_ON_THE_ROOF</item>
+    </cargo>
+    <goals>
+        <goal>
+            <kind>FIND_PERSON</kind>
+            <person>Gedney</person>
+        </goal>
+        <goal>
+            <kind>READ_BOOK</kind>
+            <book>KARLSSON_ON_THE_ROOF</book>
+        </goal>
+        <goal><kind>ENJOY_SCENERY</kind></goal>
+        <goal><kind>SEND_REPORT</kind></goal>
+    </goals>
+</config>
